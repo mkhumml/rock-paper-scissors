@@ -1,0 +1,21 @@
+.RulesContainer {
+  position: fixed;
+  bottom: 2rem;
+  width: 1000px;
+  text-align: right;
+  color: white;
+}
+
+.RulesButton {
+  border-radius: 0.5em;
+  padding: 0.5em 2em;
+  font-size: 1.25em;
+  color: white;
+  background: transparent;
+  border: 2px solid hsl(217, 16%, 45%);
+}
+
+.RulesButton:hover {
+  cursor: pointer;
+  transform: translate(1px, 1px);
+}

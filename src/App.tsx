@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Game from './components/Game/Game';
+import Header from './components/Header/Header'
+import Rules from './components/Rules/Rules';
+import './App.css'
+
+export interface Card {
+  name: string;
+  svg: string;
+  radiant: string;
+  color: string;
+}
+
+export interface Cards {
+  Card: Card[]
+}
 
 function App() {
+  const [score, setScore] = useState(12);
+  const [playerDecision, setPlayerDecision] = useState<Card | undefined>(undefined)
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='Layout'>
+        <Header score={score} />
+        <Game setScore={setScore} playerDecision={playerDecision} setPlayerDecision={setPlayerDecision} />
+        <Rules />
+      </div>
     </div>
   );
 }

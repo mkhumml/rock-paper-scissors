@@ -1,0 +1,40 @@
+.ResultContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.ResultText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ResultText > p {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+
+.ResultText > button {
+  border-radius: 0.5em;
+  color: red;
+  padding: 0.5em 2em;
+  font-size: 1.25em;
+}
+
+@keyframes animateButton {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.ResultText > button:hover {
+  cursor: pointer;
+  animation: animateButton 1s linear;
+}
