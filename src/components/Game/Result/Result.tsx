@@ -13,7 +13,6 @@ const Result = ({ decision, setScore }: Props) => {
     return (
         <div className={styles.ResultContainer}>
             <ResultSingle style={result === "YOU WIN" ? true : false} decision={decision} heading="YOU PICKED" />
-
             {result ?
                 <div className={styles.ResultText}>
                     <p>{result}</p>

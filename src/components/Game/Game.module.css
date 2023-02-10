@@ -1,4 +1,5 @@
 .GameContainer {
+    background-image: url('../../images/bg-triangle.svg');
     background-repeat: no-repeat;
     background-position: center;
     margin: 5em auto;

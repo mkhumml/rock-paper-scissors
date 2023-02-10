@@ -10,16 +10,18 @@ type Props = {
 }
 
 const winnerShadow = ",0px 0px 0px 30px rgba(255,255,255,.033), 0px 0px 0px 60px rgba(255,255,255,.033), 0px 0px 0px 90px rgba(255,255,255,.033)"
-const GameCard = ({ name, svg, color, radiant, setPlayerDecision, style}: Props) => {
-    console.log("TEST")
-    console.log(style)
+
+const GameCard = ({ name, svg, color, radiant, setPlayerDecision, style }: Props) => {
     return (
         <div
             className={styles.GameCardContainer}
             style={
-                { background: "linear-gradient(" + radiant + ")",
-                 boxShadow: "0 6px 2px " + color + ", 0 6px 0px 1px black " + (style ? winnerShadow : "") }
+                {
+                    background: "linear-gradient(" + radiant + ")",
+                    boxShadow: "0 6px 0px 2px " + color + ", 0 6px 0px 2px black " + (style ? winnerShadow : "")
+                }
             }
+            aria-pulsate={style ? true : false}
             onClick={setPlayerDecision ? () => setPlayerDecision({
                 name: name,
                 color: color,

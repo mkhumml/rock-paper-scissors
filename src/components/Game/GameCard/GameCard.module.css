@@ -22,6 +22,12 @@ anscheinend muss man die farbe inline machen damit es dann pro component die ric
   90% {opacity: 1;}
 }
 
+@keyframes pulsate {
+  25%   { box-shadow: 0px 0px 0px 30px rgba(255,255,255,.033); }
+  50%   { box-shadow: 0px 0px 0px 30px rgba(255,255,255,.033), 0px 0px 0px 60px rgba(255,255,255,.033); }
+  75%   { box-shadow: 0px 0px 0px 30px rgba(255,255,255,.033), 0px 0px 0px 60px rgba(255,255,255,.033), 0px 0px 0px 90px rgba(255,255,255,.033); }
+}
+
 .GameCardContainer {
   display: flex;
   align-items: center;
@@ -33,10 +39,17 @@ anscheinend muss man die farbe inline machen damit es dann pro component die ric
   animation-duration: 2s;
 }
 
+.GameCardContainer[aria-pulsate="true"] {
+  animation: pulsate 3s ease-in-out infinite;
+}
+
 .GameCardContainer:hover {
   cursor: pointer;
   transition: all .3s ease-in-out;
   transform:scale(1.1);
+}
+.GameCardContainer::after {
+  transition: shadow 0.3s ease-in-out;
 }
 
 .ImgContainer {

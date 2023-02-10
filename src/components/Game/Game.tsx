@@ -14,10 +14,9 @@ type Props = {
 }
 
 const Game = ({ setPlayerDecision, playerDecision, setScore }: Props) => {
-
     return (
         <div>
-            <div className={styles.GameContainer} style={{ backgroundImage: (!playerDecision ? "url('../../images/bg-triangle.svg')" : "") }}>
+            <div className={styles.GameContainer} style={{ display: (playerDecision ? "hidden" : "") }}>
                 {!playerDecision && GAME_CARDS.map(e => <GameCard setPlayerDecision={setPlayerDecision} name={e.name} svg={e.svg} color={e.color} radiant={e.radiant} />)}
             </div>
             {playerDecision && <Result setScore={setScore} decision={playerDecision} />}
